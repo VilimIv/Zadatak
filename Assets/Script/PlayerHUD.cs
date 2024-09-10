@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PlayerHud : NetworkBehaviour
 {
-    [SerializeField]
-    private NetworkVariable<NetworkString> playerNetworkName = new NetworkVariable<NetworkString>();
+    // DEFINIRAJTE NETWORK VARIJABLU
 
     private bool overlaySet = false;
 
@@ -13,7 +12,7 @@ public class PlayerHud : NetworkBehaviour
     {
         if (IsServer)
         {
-            playerNetworkName.Value = $"Player {OwnerClientId}";
+            // DODIJELITE IGRAÈU JEDINSTVENO IME (ID) PRI PRIDRUŽIVANJU
         }
     }
 

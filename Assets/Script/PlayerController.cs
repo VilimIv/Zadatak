@@ -67,25 +67,7 @@ public class PlayerController : NetworkBehaviour
         }
     }
 
-    [ServerRpc]
-    private void MovePlayerServerRpc(Vector3 moveDirection)
-    {
-        MovePlayer(moveDirection);
-        MovePlayerClientRpc(moveDirection);
-    }
-
-    [ClientRpc]
-    private void MovePlayerClientRpc(Vector3 moveDirection)
-    {
-        MovePlayer(moveDirection);
-    }
-
-    private void MovePlayer(Vector3 moveDirection)
-    {
-        Controller.Move(moveDirection * moveSpeed * Time.deltaTime);
-    }
-    void SimulatePhysics(Vector3 moveDirection)
-    {
-        Controller.Move(moveDirection * Time.deltaTime);
-    }
+    /****************************************************************************************************************************************************
+     Nadopunite kod funkcijama SimulatePhysics, MovePlayer, MovePlayerClientRpc te MovePlayerServerRpc kako bi se kretanje igraèa pravilno sinkroniziralo.
+     **************************************************************************************************************************************************S*/
 }

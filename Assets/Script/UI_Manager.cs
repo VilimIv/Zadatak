@@ -28,30 +28,8 @@ public class UI_Manager : NetworkBehaviour
 
     private void Start()
     {
-        startHostButton.onClick.AddListener(() => 
-        {
-            if(NetworkManager.Singleton.StartHost())
-            {
-                Debug.Log("Host started...");
-            }
-            else
-            {
-
-                Debug.Log("Host could not be started.");
-            }
-        });
-
-        startClientButton.onClick.AddListener(() =>
-        {
-            if (NetworkManager.Singleton.StartClient())
-            {
-                Debug.Log("Client started...");
-            }
-            else
-            {
-
-                Debug.Log("Client could not be started.");
-            }
-        });
+        /**********************************************************
+         Omoguæite pokretanje poslužitelja i klijenta pritiskom na gumbe.
+         *********************************************************/
     }
 }
